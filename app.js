@@ -34,7 +34,7 @@
     
 
     app.controller('TabController', function () {
-        this.tab = 0;
+        this.tab = 1;
 
         this.setTab = function (tab) {
             this.tab = tab;
