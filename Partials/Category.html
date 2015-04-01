@@ -1,3 +1,10 @@
-﻿<header class="col-xs-12 text-center">
+﻿<header class="col-xs-12 text-center category">
     <h1>{{CatCtrl.categories.category}}</h1>
 </header>
+
+<section class="text-center subcategory" ng-repeat="sub in CatCtrl.categories.subcategories">
+    <h3 class="subName">{{sub.name}}</h3>
+    <ul></ul>
+
+
+</section> 

@@ -34,37 +34,7 @@
             })
 
     }])
-    //.config(['$routeProvider',
-    //    function ($routeProvider) {
-    //        $routeProvider.
-    //            when('/Intro', {
-    //                templateUrl: 'Partials/intro.html'
-
-    //            }).
-    //            when('/WebDev', {
-    //                templateUrl: 'Partials/category.html',
-    //                controller: 'CategoryController as CatCtrl'
-    //            }).
-    //            when('/SQL', {
-    //                templateUrl: 'Partials/category.html',
-    //                controller: 'CategoryController as CatCtrl'
-    //            }).
-    //            when('/Analyst', {
-    //                templateUrl: 'Partials/category.html',
-    //                controller: 'CategoryController as CatCtrl'
-    //            }).
-    //            when('/Infrastructure', {
-    //                templateUrl: 'Partials/category.html',
-    //                controller: 'CategoryController as CatCtrl'
-    //            }).
-    //            when('/', {
-    //                templateUrl: 'Partials/bio.html'
-
-    //            }).
-    //            otherwise({
-    //                redirectTo: '/'
-    //            });
-    //    }])
+    
     .factory("categoryService", function () {
         var categoryData = this;
 

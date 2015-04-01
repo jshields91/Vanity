@@ -1,0 +1,11 @@
+﻿body {
+    background-color:#C6E2FF;
+}
+#partial .category {
+    top: 10%;
+  width: 50%;
+  left: 23%;
+    background-color: #2EB82E;
+    border-radius: 15px;
+  color: #FFFFFF;
+}
