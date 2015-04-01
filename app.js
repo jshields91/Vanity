@@ -17,6 +17,11 @@
                 templateUrl: 'Partials/category.html',
                 controller: 'CategoryController as CatCtrl'
             })
+            .state('bhp', {
+                url: '/WebDev/BHP',
+                templateUrl: 'Partials/category.html',
+                controller: 'CategoryController as CatCtrl'
+            })
             .state('sql', {
                 url: '/SQL',
                 templateUrl: 'Partials/category.html',
@@ -82,22 +87,22 @@
                 name: 'MVC',
                 works: [{
                     title: 'Baptist Health Project',
-                    url: '/WebDev/BHP'
+                    sref: 'bhp'
                 }, {
                     title: 'Hot Dog Lovers',
-                    url: '/WebDev/HDL'
+                    sref: 'hdl'
                 }]
             }, {
                 name: 'JavaScript',
                 works: [{
                     title: 'JS Calculator',
-                    url: '/WebDev/JSCalculator'
+                    sref: 'jscalculator'
                 }, {
                     title: 'JQuery Examples',
-                    url: '/WebDev/JQuery'
+                    sref: 'jquery'
                 }, {
                     title: 'AngularJS Examples',
-                    url: '/WebDev/AngularJS'
+                    sref: 'angularjs'
                 }]
             }]
         }, {
@@ -106,13 +111,13 @@
                 name: 'Transact-SQL',
                 works: [{
                     title: 'T-SQL Examples',
-                    url: '/SQL/T-SQL'
+                    sref: 't-sql'
                 }]
             }, {
                 name: 'Architecture',
                 works: [{
                     title: 'Dependencies & Normal Form',
-                    url: '/SQL/D&NF'
+                    sref: 'd&nf'
                 }]
             }]
         }, {
@@ -121,31 +126,31 @@
                 name: 'Case Reports',
                 works: [{
                     title: 'Appex',
-                    url: '/Analyst/Appex'
+                    sref: 'appex'
                 }, {
                     title: 'Connor Formed Metal Products',
-                    url: '/Analyst/CFMP'
+                    sref: 'cfmp'
                 }, {
                     title: 'Burlington Northern',
-                    url: '/Analyst/BN'
+                    sref: 'bn'
                 }, {
                     title: 'Symantec',
-                    url: '/Analyst/Symantec'
+                    sref: 'symantec'
                 }, {
                     title: 'Waco Manufacturing',
-                    url: '/Analyst/Waco'
+                    sref: 'waco'
                 }, {
                     title: 'Webvan',
-                    url: '/Analyst/Webvan'
+                    sref: 'webvan'
                 }]
             }]
         }, {
-            category: 'Infrastructure',
+            category: 'IT Infrastructure',
             subcategories: [{
                 name: 'Infrastructure Technologies',
                 works: [{
                     title: 'Infrastructure Knowledge',
-                    url: '/Infrastructure/Knowledge'
+                    sref: 'knowledge'
                 }]
             }]
         }];
