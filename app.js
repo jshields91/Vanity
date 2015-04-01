@@ -1,36 +1,70 @@
 ﻿(function () {
-    var app = angular.module('mainApp', ['ngRoute'])
-    .config(['$routeProvider',
-        function ($routeProvider) {
-            $routeProvider.
-                when('/Intro', {
-                    templateUrl: 'Partials/intro.html'
+    var app = angular.module('mainApp', ['ui.router'])
+    .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/');
 
-                }).
-                when('/WebDev', {
-                    templateUrl: 'Partials/category.html',
-                    controller: 'CategoryController as CatCtrl'
-                }).
-                when('/SQL', {
-                    templateUrl: 'Partials/category.html',
-                    controller: 'CategoryController as CatCtrl'
-                }).
-                when('/Analyst', {
-                    templateUrl: 'Partials/category.html',
-                    controller: 'CategoryController as CatCtrl'
-                }).
-                when('/Infrastructure', {
-                    templateUrl: 'Partials/category.html',
-                    controller: 'CategoryController as CatCtrl'
-                }).
-                when('/', {
-                    templateUrl: 'Partials/bio.html'
+        $stateProvider
+            .state('bio', {
+                url: '/',
+                templateUrl: 'Partials/bio.html'
+            })
+            .state('intro', {
+                url: '/Intro',
+                templateUrl: 'Partials/intro.html'                
+            })
+            .state('webdev', {
+                url: '/WebDev',
+                templateUrl: 'Partials/category.html',
+                controller: 'CategoryController as CatCtrl'
+            })
+            .state('sql', {
+                url: '/SQL',
+                templateUrl: 'Partials/category.html',
+                controller: 'CategoryController as CatCtrl'
+            })
+            .state('analyst', {
+                url: '/Analyst',
+                templateUrl: 'Partials/category.html',
+                controller: 'CategoryController as CatCtrl'
+            })
+            .state('infrastructure', {
+                url: '/Infrastructure',
+                templateUrl: 'Partials/category.html',
+                controller: 'CategoryController as CatCtrl'
+            })
 
-                }).
-                otherwise({
-                    redirectTo: '/'
-                });
-        }])
+    }])
+    //.config(['$routeProvider',
+    //    function ($routeProvider) {
+    //        $routeProvider.
+    //            when('/Intro', {
+    //                templateUrl: 'Partials/intro.html'
+
+    //            }).
+    //            when('/WebDev', {
+    //                templateUrl: 'Partials/category.html',
+    //                controller: 'CategoryController as CatCtrl'
+    //            }).
+    //            when('/SQL', {
+    //                templateUrl: 'Partials/category.html',
+    //                controller: 'CategoryController as CatCtrl'
+    //            }).
+    //            when('/Analyst', {
+    //                templateUrl: 'Partials/category.html',
+    //                controller: 'CategoryController as CatCtrl'
+    //            }).
+    //            when('/Infrastructure', {
+    //                templateUrl: 'Partials/category.html',
+    //                controller: 'CategoryController as CatCtrl'
+    //            }).
+    //            when('/', {
+    //                templateUrl: 'Partials/bio.html'
+
+    //            }).
+    //            otherwise({
+    //                redirectTo: '/'
+    //            });
+    //    }])
     .factory("categoryService", function () {
         var categoryData = this;
 
