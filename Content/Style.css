@@ -11,6 +11,13 @@
     min-width: 313px;
 }
 
+/*Bio template CSS*/
+#partial .profilePic {
+    max-width: 300px;
+    min-width: 150px;
+}
+
+/*Category template CSS*/
 #partial .category {
     position:static;
     margin-top:2%;
