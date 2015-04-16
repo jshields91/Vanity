@@ -1,5 +1,5 @@
 ﻿(function () {
-    var app = angular.module('mainApp', ['ui.router'])
+    var app = angular.module('mainApp', ['ui.router', 'ngAnimate'])
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
 

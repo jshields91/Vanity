@@ -1,57 +1,65 @@
-﻿body {
+﻿html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
     font-family: Verdana, Helvetica, Arial, sans-serif;
-    background-color:#CCCAAF;
-}
-#partial{
-    position: static;
-    background-color: #2A13E8;
-    border-radius: 10px;
-    border: solid 2px #FFF;
-    margin-top: 1%;
-    min-width: 313px;
+    background-image: url('../Resources/bluesmoke.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 0;
 }
 
-/*Bio template CSS*/
-#partial .profilePic {
-    max-width: 300px;
-    min-width: 150px;
+.mainNav {
+    background-color: #FFF;
+    z-index:1;
 }
 
-/*Category template CSS*/
-#partial .category {
-    position:static;
-    margin-top:2%;
-    margin-bottom: 3%;
-    background-color: #FF0000;
-    border-radius: 15px;
-    border: solid 1px #FFF;
-    color: #FFFFFF;
-    min-width: 283px;
-  
+.well[ui-view]{
+ height: 65px; 
 }
 
-#partial .subcategory {
-    position: static;
-    margin-bottom: 3%;
-    background-color: #FF0000;
-    border-radius: 15px;
-    border: solid 1px #FFF;
-    color: #FFFFFF;
-    margin:1%;
-    min-width: 193px;
+.ui-view-container {
+  position: relative;
 }
 
-#partial .subcategory ul {
-    padding-left: 25%
+[ui-view].ng-enter, [ui-view].ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transition:all .5s ease-in-out;
+	-moz-transition:all .5s ease-in-out;
+	-o-transition:all .5s ease-in-out;
+	transition:all .5s ease-in-out;
 }
 
-#partial .subcategory a {
-    color: #FFF;
-    
+[ui-view].ng-enter {
+  opacity: 0;
+  -webkit-transform:scale3d(0.5, 0.5, 0.5);
+  -moz-transform:scale3d(0.5, 0.5, 0.5);
+  transform:scale3d(0.5, 0.5, 0.5);
 }
 
-#partial .subcategory a:hover {
-    cursor: pointer;
+[ui-view].ng-enter-active {
+  opacity: 1;
+  -webkit-transform:scale3d(1, 1, 1);
+  -moz-transform:scale3d(1, 1, 1);
+  transform:scale3d(1, 1, 1);
 }
 
+[ui-view].ng-leave {
+  opacity: 1;
+  /*padding-left: 0px;*/  
+  -webkit-transform:translate3d(0, 0, 0);
+  -moz-transform:translate3d(0, 0, 0);
+  transform:translate3d(0, 0, 0);
+}
 
+[ui-view].ng-leave-active {
+  opacity: 0;
+  /*padding-left: 100px;*/
+  -webkit-transform:translate3d(100px, 0, 0);
+  -moz-transform:translate3d(100px, 0, 0);
+  transform:translate3d(100px, 0, 0);
+}

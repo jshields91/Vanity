@@ -4,6 +4,8 @@
     <script src="Scripts/jquery-2.1.3.min.js"></script>
     <script src="Scripts/angular.min.js"></script>
     <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
     <script type="text/javascript" src="app.js"></script>
@@ -12,10 +14,10 @@
     <link type="text/css" rel="stylesheet" href="Content/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="Content/Style.css" />
 
-    <title>Jordan Shields -- IT Professional</title>
+    <title>Jordan Shields</title>
 </head>
 <body> <!--onload="checkCookie()">-->
-    <nav class="navbar navbar-inverse" ng-controller="TabController as tab">
+    <nav class="mainNav navbar" ng-controller="TabController as tab">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -25,7 +27,7 @@
                 </button>
                 <a class="navbar-brand" ui-sref="bio">Jordan Shields</a>
             </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li ng-class="{ active:tab.isSet(1) }">
                         <a ui-sref="bio" ng-click="tab.setTab(1)">Bio</a>
@@ -40,7 +42,7 @@
                         <a ui-sref="analyst" ng-click="tab.setTab(4)">Analyst</a>
                     </li>
                     <li ng-class="{ active:tab.isSet(5) }">
-                        <a ui-sref="infrastructure" ng-click="tab.setTab(5)">Infrastructure</a>
+                        <a ui-sref="infrastructure" ng-click="tab.setTab(5)">IT Infrastructure</a>
                     </li>
                 </ul>
             </div>
@@ -48,7 +50,10 @@
     </nav>
 
     <!--Page Content-->
-    <section id="partial" class="container" ui-view></section>
-
+    <div class="row">
+        <div class="span12 ui-view-container">
+            <div class="well" ui-view></div>
+        </div>
+    </div>
 </body>
 </html>
