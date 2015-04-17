@@ -81,78 +81,110 @@
 
 
     var categories = [
-        {
-            category: 'Web Development',
-            subcategories: [{
-                name: 'MVC',
-                works: [{
-                    title: 'Baptist Health Project',
-                    sref: 'bhp'
-                }, {
-                    title: 'Hot Dog Lovers',
-                    sref: 'hdl'
-                }]
-            }, {
-                name: 'JavaScript',
-                works: [{
-                    title: 'JS Calculator',
-                    sref: 'jscalculator'
-                }, {
-                    title: 'JQuery Examples',
-                    sref: 'jquery'
-                }, {
-                    title: 'AngularJS Examples',
-                    sref: 'angularjs'
-                }]
-            }]
-        }, {
-            category: 'SQL',
-            subcategories: [{
-                name: 'Transact-SQL',
-                works: [{
-                    title: 'T-SQL Examples',
-                    sref: 't-sql'
-                }]
-            }, {
-                name: 'Architecture',
-                works: [{
-                    title: 'Dependencies & Normal Form',
-                    sref: 'd&nf'
-                }]
-            }]
-        }, {
-            category: 'Analyst',
-            subcategories: [{
-                name: 'Case Reports',
-                works: [{
-                    title: 'Appex',
-                    sref: 'appex'
-                }, {
-                    title: 'Connor Formed Metal Products',
-                    sref: 'cfmp'
-                }, {
-                    title: 'Burlington Northern',
-                    sref: 'bn'
-                }, {
-                    title: 'Symantec',
-                    sref: 'symantec'
-                }, {
-                    title: 'Waco Manufacturing',
-                    sref: 'waco'
-                }, {
-                    title: 'Webvan',
-                    sref: 'webvan'
-                }]
-            }]
-        }, {
-            category: 'IT Infrastructure',
-            subcategories: [{
-                name: 'Infrastructure Technologies',
-                works: [{
-                    title: 'Infrastructure Knowledge',
-                    sref: 'knowledge'
-                }]
-            }]
-        }];
+           {
+               category: 'Web Development',
+               subcategories: [{
+                   name: 'MVC',
+                   works: [{
+                       title: 'Baptist Health Project',
+                       link: {
+                           repourl: 'https://github.com/jshields91/MVC_BaptistProjectPartial',
+                           ghurl: 'http://www.jordanshields.net/MVC_BaptistProjectPartial/'
+                       }
+                   }, {
+                       title: 'Hot Dog Lovers',
+                       link: {
+                           
+                       }
+                   }]
+               }, {
+                   name: 'JavaScript',
+                   works: [{
+                       title: 'JS Calculator',
+                       link: {
+                           repourl: 'https://github.com/jshields91/Pure-JS-Calculator',
+                           ghurl: 'http://www.jordanshields.net/Pure-JS-Calculator/'
+                       }
+                   }, {
+                       title: 'JQuery Examples -- Tic-Tac-Toe',
+                       link: {
+                           repourl: 'https://github.com/jshields91/JQuery-tic-tac-toe',
+                           ghurl: 'http://www.jordanshields.net/JQuery-tic-tac-toe/'
+                       }
+                   }, {
+                       title: 'AngularJS Examples',
+                       link: {
+                           repourl: 'https://github.com/jshields91/AngularJS-examples',
+                           ghurl: 'http://www.jordanshields.net/AngularJS-examples/'
+                       }
+                   }]
+               }]
+           }, {
+               category: 'SQL',
+               subcategories: [{
+                   name: 'Transact-SQL',
+                   works: [{
+                       title: 'T-SQL Examples',
+                       link: {
+                           repourl: 'https://github.com/jshields91/T-SQL',
+                           ghurl: 'http://www.jordanshields.net/T-SQL/'
+                       }
+                   }]
+               }]
+           }, {
+               category: 'Analyst',
+               subcategories: [{
+                   name: 'Case Reports',
+                   works: [{
+                       title: 'Appex',
+                       link: {
+                           repourl: 'https://github.com/jshields91/Business-Analysis',
+                           ghurl: 'http://www.jordanshields.net/Business-Analysis/Appex.html'
+                       }
+                   }, {
+                       title: 'Connor Formed Metal Products',
+                       link: {
+                           repourl: 'https://github.com/jshields91/Business-Analysis',
+                           ghurl: 'http://www.jordanshields.net/Business-Analysis/CFMP.html'
+                       }
+                   }, {
+                       title: 'Burlington Northern',
+                       link: {
+                           repourl: 'https://github.com/jshields91/Business-Analysis',
+                           ghurl: 'http://www.jordanshields.net/Business-Analysis/BN.html'
+                       }
+                   }, {
+                       title: 'Symantec',
+                       link: {
+                           repourl: 'https://github.com/jshields91/Business-Analysis',
+                           ghurl: 'http://www.jordanshields.net/Business-Analysis/Symantec.html'
+                       }
+                   }, {
+                       title: 'Waco Manufacturing',
+                       link: {
+                           repourl: 'https://github.com/jshields91/Business-Analysis',
+                           ghurl: 'http://www.jordanshields.net/Business-Analysis/Waco.html'
+                       }
+                   }, {
+                       title: 'Webvan',
+                       link: {
+                           repourl: 'https://github.com/jshields91/Business-Analysis',
+                           ghurl: 'http://www.jordanshields.net/Business-Analysis/Webvan.html'
+                       }
+                   }]
+               }]
+           }, {
+               category: 'IT Infrastructure',
+               subcategories: [{
+                   name: 'Infrastructure Technologies',
+                   works: [{
+                       title: 'Infrastructure Knowledge',
+                       link: {
+                           repourl: 'https://github.com/jshields91/IT-Infrastructure',
+                           ghurl: 'http://www.jordanshields.net/IT-Infrastructure/'
+                       }
+                   }]
+               }]
+           }];
 
 })();
