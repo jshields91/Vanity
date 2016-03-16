@@ -1,5 +1,5 @@
 ﻿(function () {
-    var app = angular.module('mainApp', ['ui.router', 'ngAnimate'])
+    var app = angular.module('mainApp', ['ui.router', 'ngAnimate', 'ngCookies'])
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
 
@@ -51,18 +51,37 @@
                 return categoryData.category;
             }
         }
-
     
-    });
-    
+    })
 
-    
+    .factory("pagePersistenceService", ["$cookies", function ($cookies) {
+        var currentTab = 1;
 
-    app.controller('TabController', function TabCtrl(categoryService) {
+        return {
+            setTabData: function (tab) {
+                currentTab = tab;
+                $cookies.put("currentTab", currentTab);
+            },
+            getTabData: function () {
+                currentTab = $cookies.get("currentTab");
+                return currentTab;
+            },
+            clearTabData: function () {
+                currentTab = 1;
+                $cookies.remove("currentTab");
+            }
+        }
+
+    }]);        
+
+    app.controller('TabController', function TabCtrl(categoryService, pagePersistenceService) {
         this.tab = 1;
 
         this.setTab = function (tab) {
             this.tab = tab;
+
+            pagePersistenceService.setTabData(tab);
+
             if (this.tab >= 2 || this.tab <= 5) {
                 categoryService.setCategory(this.tab);
             }
