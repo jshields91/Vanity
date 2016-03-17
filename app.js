@@ -1,58 +1,63 @@
 ﻿(function () {
     var app = angular.module('mainApp', ['ui.router', 'ngAnimate', 'ngCookies'])
-    .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    .config(['$rootScope', '$stateProvider', '$urlRouterProvider', 'categoryServiceProvider', 'pagePersistenceServiceProvider', function ($rootScope, $stateProvider, $urlRouterProvider, categoryServiceProvider, pagePersistenceServiceProvider) {
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
             .state('bio', {
                 url: '/',
-                templateUrl: 'Partials/bio.html'
+                templateUrl: 'Partials/bio.html',
+                onEnter: function (pagePersistenceService) {
+                    $rootScope.tab = 1;
+                    pagePersistenceService.setTabData($rootScope.tab);
+                }
             })
             .state('intro', {
                 url: '/Intro',
-                templateUrl: 'Partials/intro.html'                
+                templateUrl: 'Partials/intro.html'
             })
             .state('webdev', {
                 url: '/WebDev',
                 templateUrl: 'Partials/category.html',
-                controller: 'CategoryController as CatCtrl'
-            })
-            .state('bhp', {
-                url: '/WebDev/BHP',
-                templateUrl: 'Partials/category.html',
-                controller: 'CategoryController as CatCtrl'
+                controller: 'CategoryController as CatCtrl',
+                onEnter: function (categoryService, pagePersistenceService) {
+                    $rootScope.tab = 2;
+                    pagePersistenceService.setTabData($rootScope.tab);
+                    categoryService.setCategory($rootScope.tab);
+                }
             })
             .state('sql', {
                 url: '/SQL',
                 templateUrl: 'Partials/category.html',
-                controller: 'CategoryController as CatCtrl'
+                controller: 'CategoryController as CatCtrl',
+                onEnter: function (categoryService, pagePersistenceService) {
+                    $rootScope.tab = 3;
+                    pagePersistenceService.setTabData($rootScope.tab);
+                    categoryService.setCategory($rootScope.tab);
+                }
             })
             .state('analyst', {
                 url: '/Analyst',
                 templateUrl: 'Partials/category.html',
-                controller: 'CategoryController as CatCtrl'
+                controller: 'CategoryController as CatCtrl',
+                onEnter: function (categoryService, pagePersistenceService) {
+                    $rootScope.tab = 4;
+                    pagePersistenceService.setTabData($rootScope.tab);
+                    categoryService.setCategory($rootScope.tab);
+                }
             })
             .state('infrastructure', {
                 url: '/Infrastructure',
                 templateUrl: 'Partials/category.html',
-                controller: 'CategoryController as CatCtrl'
+                controller: 'CategoryController as CatCtrl',
+                onEnter: function (categoryService, pagePersistenceService) {
+                    $rootScope.tab = 5;
+                    pagePersistenceService.setTabData($rootScope.tab);
+                    categoryService.setCategory($rootScope.tab);
+                }
             })
 
     }])
-    
-    .factory("categoryService", function () {
-        var categoryData = this;
-
-        return {
-            setCategory: function (cat) {
-                categoryData.category = cat - 2;
-            },
-            getCategory: function () {
-                return categoryData.category;
-            }
-        }
-    
-    })
 
     .factory("pagePersistenceService", ["$cookies", function ($cookies) {
         var currentTab = 1;
@@ -72,23 +77,35 @@
             }
         }
 
-    }]);        
+    }])
 
-    app.controller('TabController', function TabCtrl(categoryService, pagePersistenceService) {
-        this.tab = 1;
+    .factory("categoryService", function () {
+        var categoryData = this;        
+
+        return {
+            setCategory: function (cat) {
+                categoryData.category = cat - 2;
+            },
+            getCategory: function () {
+                return categoryData.category;
+            }
+        }
+
+    });
+
+    app.controller('TabController', function TabCtrl($scope, categoryService, pagePersistenceService) {
+        $scope.tab = 1;
 
         this.setTab = function (tab) {
-            this.tab = tab;
+            $scope.tab = tab;
 
-            pagePersistenceService.setTabData(tab);
-
-            if (this.tab >= 2 || this.tab <= 5) {
-                categoryService.setCategory(this.tab);
+            if ($scope.tab >= 2 || $scope.tab <= 5) {
+                categoryService.setCategory($scope.tab);
             }
         };
 
         this.isSet = function (tab) {
-            return (this.tab === tab);
+            return ($scope.tab === tab);
         };
     });
 

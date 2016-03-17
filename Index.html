@@ -17,7 +17,7 @@
     <title>Jordan Shields</title>
 </head>
 <body> 
-    <nav class="mainNav navbar" ng-controller="TabController as tab">
+    <nav class="mainNav navbar" ng-controller="TabController as tabCtrl">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -29,20 +29,20 @@
             </div>
             <div class="collapse navbar-collapse navbar-right" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li ng-class="{ active:tab.isSet(1) }">
-                        <a ui-sref="bio" ng-click="tab.setTab(1)">Bio</a>
+                    <li ng-class="{ active:tabCtrl.isSet(1) }">
+                        <a ui-sref="bio" ng-click="tabCtrl.setTab(1)">Bio</a>
                     </li>
-                    <li ng-class="{ active:tab.isSet(2) }">
-                        <a ui-sref="webdev" ng-click="tab.setTab(2)">Web Dev</a>
+                    <li ng-class="{ active:tabCtrl.isSet(2) }">
+                        <a ui-sref="webdev" ng-click="tabCtrl.setTab(2)">Web Dev</a>
                     </li>
-                    <li ng-class="{ active:tab.isSet(3) }">
-                        <a ui-sref="sql" ng-click="tab.setTab(3)">SQL</a>
+                    <li ng-class="{ active:tabCtrl.isSet(3) }">
+                        <a ui-sref="sql" ng-click="tabCtrl.setTab(3)">SQL</a>
                     </li>
-                    <li ng-class="{ active:tab.isSet(4) }">
-                        <a ui-sref="analyst" ng-click="tab.setTab(4)">Analyst</a>
+                    <li ng-class="{ active:tabCtrl.isSet(4) }">
+                        <a ui-sref="analyst" ng-click="tabCtrl.setTab(4)">Analyst</a>
                     </li>
-                    <li ng-class="{ active:tab.isSet(5) }">
-                        <a ui-sref="infrastructure" ng-click="tab.setTab(5)">IT Infrastructure</a>
+                    <li ng-class="{ active:tabCtrl.isSet(5) }">
+                        <a ui-sref="infrastructure" ng-click="tabCtrl.setTab(5)">IT Infrastructure</a>
                     </li>
                 </ul>
             </div>
