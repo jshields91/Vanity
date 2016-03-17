@@ -1,13 +1,13 @@
 ﻿(function () {
     var app = angular.module('mainApp', ['ui.router', 'ngAnimate', 'ngCookies'])
-    .config(['$rootScope', '$stateProvider', '$urlRouterProvider', 'categoryServiceProvider', 'pagePersistenceServiceProvider', function ($rootScope, $stateProvider, $urlRouterProvider, categoryServiceProvider, pagePersistenceServiceProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', 'categoryServiceProvider', 'pagePersistenceServiceProvider', function ($stateProvider, $urlRouterProvider, categoryServiceProvider, pagePersistenceServiceProvider) {
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
             .state('bio', {
                 url: '/',
                 templateUrl: 'Partials/bio.html',
-                onEnter: function (pagePersistenceService) {
+                onEnter: function ($rootScope, pagePersistenceService) {
                     $rootScope.tab = 1;
                     pagePersistenceService.setTabData($rootScope.tab);
                 }
@@ -20,7 +20,7 @@
                 url: '/WebDev',
                 templateUrl: 'Partials/category.html',
                 controller: 'CategoryController as CatCtrl',
-                onEnter: function (categoryService, pagePersistenceService) {
+                onEnter: function ($rootScope, categoryService, pagePersistenceService) {
                     $rootScope.tab = 2;
                     pagePersistenceService.setTabData($rootScope.tab);
                     categoryService.setCategory($rootScope.tab);
@@ -30,7 +30,7 @@
                 url: '/SQL',
                 templateUrl: 'Partials/category.html',
                 controller: 'CategoryController as CatCtrl',
-                onEnter: function (categoryService, pagePersistenceService) {
+                onEnter: function ($rootScope, categoryService, pagePersistenceService) {
                     $rootScope.tab = 3;
                     pagePersistenceService.setTabData($rootScope.tab);
                     categoryService.setCategory($rootScope.tab);
@@ -40,7 +40,7 @@
                 url: '/Analyst',
                 templateUrl: 'Partials/category.html',
                 controller: 'CategoryController as CatCtrl',
-                onEnter: function (categoryService, pagePersistenceService) {
+                onEnter: function ($rootScope, categoryService, pagePersistenceService) {
                     $rootScope.tab = 4;
                     pagePersistenceService.setTabData($rootScope.tab);
                     categoryService.setCategory($rootScope.tab);
@@ -50,13 +50,17 @@
                 url: '/Infrastructure',
                 templateUrl: 'Partials/category.html',
                 controller: 'CategoryController as CatCtrl',
-                onEnter: function (categoryService, pagePersistenceService) {
+                onEnter: function ($rootScope, categoryService, pagePersistenceService) {
                     $rootScope.tab = 5;
                     pagePersistenceService.setTabData($rootScope.tab);
                     categoryService.setCategory($rootScope.tab);
                 }
             })
 
+    }])
+    
+    .run(["$rootScope", "pagePersistenceService", function ($rootScope, pagePersistenceService) {
+        $rootScope.tab = pagePersistenceService.getTabData() || 1;
     }])
 
     .factory("pagePersistenceService", ["$cookies", function ($cookies) {
@@ -93,19 +97,18 @@
 
     });
 
-    app.controller('TabController', function TabCtrl($scope, categoryService, pagePersistenceService) {
-        $scope.tab = 1;
+    app.controller('TabController', function TabCtrl($rootScope, categoryService, pagePersistenceService) {
 
         this.setTab = function (tab) {
-            $scope.tab = tab;
+            $rootScope.tab = tab;
 
-            if ($scope.tab >= 2 || $scope.tab <= 5) {
-                categoryService.setCategory($scope.tab);
+            if ($rootScope.tab >= 2 || $rootScope.tab <= 5) {
+                categoryService.setCategory($rootScope.tab);
             }
         };
 
         this.isSet = function (tab) {
-            return ($scope.tab === tab);
+            return ($rootScope.tab === tab);
         };
     });
 

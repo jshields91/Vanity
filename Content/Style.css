@@ -21,6 +21,16 @@ a:hover {
     z-index: 1;
 }
 
+li.active > a,
+li.active > a:hover,
+li.active > a:focus {
+    color: #555555;
+    cursor: default;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-bottom-color: transparent;
+    }
+
 .well[ui-view] {
     height: 65px;
 }
