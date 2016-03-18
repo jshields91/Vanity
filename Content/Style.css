@@ -1,8 +1,17 @@
-﻿html {
+﻿@media screen and (min-height: 768px) {
+	body { overflow-y: hidden; }
+}
+@media screen and (max-height: 768px) {
+	body { overflow-y: auto; }
+}
+
+html {
     height: 100%;
 }
 
 body {
+    margin: 0;
+    width:100%;
     min-height: 100%;
     font-family: Verdana, Helvetica, Arial, sans-serif;
     background-image: url('../Resources/bluesmoke.jpg');
@@ -12,27 +21,14 @@ body {
     overflow-x:hidden;
 }
 
-a:hover {
-    cursor: pointer;
-}
-
-.mainNav {
-    background-color: rgba(240,240,240,.8);
-    z-index: 1;
-}
-
-li.active > a,
-li.active > a:hover,
-li.active > a:focus {
-    color: #555555;
-    cursor: default;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-bottom-color: transparent;
-    }
-
 .well[ui-view] {
-    height: 65px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(211, 211, 211, 0.7);
+    min-width: 640px; 
+    overflow-y:auto;
+    border: none;
 }
 
 .ui-view-container {
@@ -95,4 +91,43 @@ li.active > a:focus {
 .subcategory ul {
     position: relative;
     left: 20%;
+}
+
+
+a:hover {
+    cursor: pointer;
+}
+
+.headerLogo {
+    font: normal 200% Arial, Helvetica, sans-serif;
+    letter-spacing: -2px;
+    text-shadow: 1px 1px #EEE;
+    color: #000;
+}
+
+.mainNav {
+    background-color: rgba(240,240,240,.8);
+    z-index: 1;
+}
+
+li.active > a,
+li.active > a:hover,
+li.active > a:focus {
+    color: #555555;
+    cursor: default;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-bottom-color: transparent;
+    }
+
+.profilePic {
+    border: 2px solid black;
+    border-radius: 2px;
+    padding: 0px;
+}
+
+.skill {
+    color:#fff;
+    text-shadow:#969696 1px 3px 0, #aba8a8 1px 13px 5px;
+    font-size: 2em;
 }
