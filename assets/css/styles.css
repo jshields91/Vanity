@@ -108,6 +108,10 @@ p {
   opacity: 0.9;
 }
 
+.logo-img {
+  border-radius: 5%;
+}
+
 .nav li a {
   text-decoration: none !important;
   display: inline-block;
@@ -1225,12 +1229,12 @@ button:focus {
 }
 
 .dark-vertion .mh-home .hero-img img {
-  border: 20px solid rgba(0, 0, 0, 0.6);
+  border: 3px solid rgba(0, 0, 0, 0.6);
 }
 
-.dark-vertion .mh-home .img-border {
+/* .dark-vertion .mh-home .img-border {
   border: 20px solid rgba(0, 0, 0, 0.45);
-}
+} */
 
 .dark-vertion .candidatos .parcial .progressBar {
   background: rgba(199, 198, 198, 0.6);
