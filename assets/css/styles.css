@@ -645,12 +645,20 @@ ul li {
   background-position: center center;
 }
 
+.image-bg.hole {
+  background-position: top center;
+}
+
+.home-1-img {
+  background-image: url(../images/cb.jpg);
+}
+
 .home-2-img {
   background-image: url(../images/home-bg-img.jpg);
 }
 
 .featured-img-one {
-  background-image: url(../images/home-bg-img.jpg);
+  background-image: url(../images/overlay-img-1.png);
 }
 
 .featured-img-two {
@@ -1117,7 +1125,7 @@ button:focus {
 }
 
 .dark-vertion .img-color-overlay {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .dark-vertion .mh-home .mh-header-info .social-icon li .fa:hover {
@@ -1217,11 +1225,11 @@ button:focus {
 }
 
 .dark-vertion .mh-home .hero-img img {
-  border: 20px solid rgba(0, 0, 0, 0.4);
+  border: 20px solid rgba(0, 0, 0, 0.6);
 }
 
 .dark-vertion .mh-home .img-border {
-  border: 20px solid rgba(0, 0, 0, 0.9);
+  border: 20px solid rgba(0, 0, 0, 0.45);
 }
 
 .dark-vertion .candidatos .parcial .progressBar {
@@ -1383,7 +1391,7 @@ li .fa {
 }
 
 .mh-header.nav-strict {
-  padding: 10px 0;
+  padding: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -1859,7 +1867,6 @@ li .fa {
 }
 
 .mh-experince .mh-education-deatils .mh-education-item h4 a {
-  margin-left: 2px;
   color: #0bceaf;
 }
 
@@ -1916,6 +1923,10 @@ li .fa {
   color: #0bceaf;
 }
 
+.mh-experince .mh-education-deatils .mh-education-item h4 a:hover, .mh-work .mh-experience-deatils .mh-work-item h4 a:hover {
+  color: #42ffe1;
+}
+
 .mh-work .mh-experience-deatils .mh-work-item .mh-eduyear {
   margin: 10px 0;
   color: #0bceaf;
@@ -1932,7 +1943,7 @@ li .fa {
   margin: 2px 0;
 }
 
-.mh-work .mh-experience-deatils .mh-work-item .work-responsibility li .fa {
+.mh-work .mh-experience-deatils .mh-work-item .work-responsibility li .fa, .work-responsibility .fa {
   font-size: 10px;
   line-height: 23px;
   margin-right: 10px;

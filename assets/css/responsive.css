@@ -340,6 +340,10 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .mh-service .mh-service-item {
+    margin-bottom: 20px;
+    text-align: center;
+  }
   .mh-blog .mh-blog-item {
     text-align: center;
   }
@@ -539,10 +543,6 @@
   }
   .mh-portfolio-modal-img {
     margin-top: 50px;
-  }
-  .mh-service .mh-service-item {
-    margin-bottom: 20px;
-    text-align: center;
   }
   .social-icon {
     display: block;
